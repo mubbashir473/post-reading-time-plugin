@@ -10,7 +10,7 @@ Author: Mubbashir Hassan
 defined('ABSPATH') or die;
 
 function reading_time($content) {
-   
+    if (is_single()) {
        
         $word_count = str_word_count(strip_tags($content));
 
@@ -23,6 +23,8 @@ function reading_time($content) {
 
         
         return $message . $content;
+    }
+    return $content;
    
 }
 function reading_time_home($excerpt) {
